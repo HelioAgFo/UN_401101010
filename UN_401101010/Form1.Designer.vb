@@ -40,6 +40,7 @@
         Me.Update1 = New Microsoft.Dynamics.SL.Controls.DSLUpdate()
         Me.SAFHelpProvider = New System.Windows.Forms.HelpProvider()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.cCustid = New Microsoft.Dynamics.SL.Controls.DSLMaskedText()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -49,6 +50,8 @@
         Me.cCustidd = New Microsoft.Dynamics.SL.Controls.DSLMaskedText()
         Me.DslGrid1 = New Microsoft.Dynamics.SL.Controls.DSLGrid()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DslCheck1 = New Microsoft.Dynamics.SL.Controls.DSLCheck()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.Update1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DslGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +75,7 @@
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.cCustid)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -80,6 +84,14 @@
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "General"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(250, 42)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(0, 17)
+        Me.Label5.TabIndex = 3
         '
         'cCustid
         '
@@ -124,7 +136,7 @@
         '
         'cShipperid
         '
-        Me.cShipperid.FieldName = """bSoshipheader.shipperid""; 0; 0; 15"
+        Me.cShipperid.FieldName = """bxSoshipheader.shipperid""; 0; 0; 15"
         Me.cShipperid.Heading = "No. Embarque:"
         Me.cShipperid.Level = "1"
         Me.cShipperid.Location = New System.Drawing.Point(130, 30)
@@ -136,7 +148,7 @@
         '
         'cCustidd
         '
-        Me.cCustidd.FieldName = """bSoshipheader.Custid""; 0; 0; 15"
+        Me.cCustidd.FieldName = """bxSoshipheader.Custid""; 0; 0; 15"
         Me.cCustidd.Heading = "Cliente:"
         Me.cCustidd.Level = "1"
         Me.cCustidd.Location = New System.Drawing.Point(130, 60)
@@ -148,7 +160,7 @@
         '
         'DslGrid1
         '
-        Me.DslGrid1.Location = New System.Drawing.Point(83, 114)
+        Me.DslGrid1.Location = New System.Drawing.Point(50, 165)
         Me.DslGrid1.Name = "DslGrid1"
         Me.DslGrid1.OcxState = CType(resources.GetObject("DslGrid1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.DslGrid1.Size = New System.Drawing.Size(200, 120)
@@ -157,6 +169,8 @@
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.DslCheck1)
+        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.DslGrid1)
         Me.GroupBox2.Controls.Add(Me.cCustidd)
         Me.GroupBox2.Controls.Add(Me.cShipperid)
@@ -168,6 +182,27 @@
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle"
+        '
+        'DslCheck1
+        '
+        Me.DslCheck1.FieldName = """bxSoshipheader.s4future10""; 0; 0; 0"
+        Me.DslCheck1.Heading = "Agrupar"
+        Me.DslCheck1.Level = "1"
+        Me.DslCheck1.Location = New System.Drawing.Point(130, 90)
+        Me.DslCheck1.Name = "DslCheck1"
+        Me.DslCheck1.Size = New System.Drawing.Size(104, 24)
+        Me.DslCheck1.TabIndex = 1
+        Me.DslCheck1.Text = "Agrupar"
+        Me.DslCheck1.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(20, 90)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 17)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Agrupar:"
         '
         'Form1
         '
@@ -204,5 +239,8 @@
     Friend WithEvents cCustidd As Microsoft.Dynamics.SL.Controls.DSLMaskedText
     Friend WithEvents DslGrid1 As Microsoft.Dynamics.SL.Controls.DSLGrid
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DslCheck1 As Microsoft.Dynamics.SL.Controls.DSLCheck
+    Friend WithEvents Label5 As Label
 #End Region
 End Class

@@ -26,10 +26,12 @@ Friend Class Form1
         Call ApplInit()
 
         Call Init_Customer(LEVEL0, True)
-        Call Init_SOShipHeader(LEVEL1, True)
+        Call Init_xSOShipHeader(LEVEL1, True)
         Call ScreenInit()
 
-        Spread1 = DetailSetup(CSR_SOShipHeader, DslGrid1, bSOShipHeader.AddressOf("ShipperID"), bSOShipHeader, PNULL, PNULL, PNULL)
+        Spread1 = DetailSetup(CSR_xSOShipHeader, DslGrid1, bxSOShipHeader.AddressOf("ShipperID"), bxSOShipHeader, PNULL, PNULL, PNULL)
+
+        Call InitBuffer()
 
         With Timer1
             .Interval = 10000
@@ -39,6 +41,19 @@ Friend Class Form1
 
 
 
+    End Sub
+
+    Private Sub InitBuffer()
+        Label5.Text = ""
+
+        With nxSOShipHeader
+            .Crtd_DateTime = bpes.Today
+            .Crtd_Prog = bpes.ScrnNbr
+            .Crtd_User = bpes.UserId
+            .LUpd_DateTime = bpes.Today
+            .LUpd_Prog = bpes.ScrnNbr
+            .LUpd_User = bpes.UserId
+        End With
     End Sub
 
     Private Sub Form1_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
@@ -56,6 +71,9 @@ Friend Class Form1
         serr = PVChkFetch1(PNULL, CSR_Customer, ChkStrg, bCustomer)
         If serr = NOTFOUND Then
             RetVal = NoAutoChk
+        Else
+            Label5.Text = bCustomer.Name
+
         End If
 
     End Sub
