@@ -52,6 +52,8 @@
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DslCheck1 = New Microsoft.Dynamics.SL.Controls.DSLCheck()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DslMaskedText1 = New Microsoft.Dynamics.SL.Controls.DSLMaskedText()
         CType(Me.Update1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DslGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,6 +171,8 @@
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.DslMaskedText1)
+        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.DslCheck1)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.DslGrid1)
@@ -203,6 +207,27 @@
         Me.Label4.Size = New System.Drawing.Size(62, 17)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Agrupar:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 123)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 17)
+        Me.Label6.TabIndex = 4
+        Me.Label6.Text = "Lote Agru:"
+        '
+        'DslMaskedText1
+        '
+        Me.DslMaskedText1.FieldName = """bxSoshipheader.s4future11""; 0; 0; 15"
+        Me.DslMaskedText1.Heading = "Lote Agru"
+        Me.DslMaskedText1.Level = "1"
+        Me.DslMaskedText1.Location = New System.Drawing.Point(130, 120)
+        Me.DslMaskedText1.Mask = "UUUUUUUUUU"
+        Me.DslMaskedText1.Name = "DslMaskedText1"
+        Me.DslMaskedText1.Size = New System.Drawing.Size(120, 22)
+        Me.DslMaskedText1.TabIndex = 5
+        Me.DslMaskedText1.TextLength = 10
         '
         'Form1
         '
@@ -242,5 +267,7 @@
     Friend WithEvents Label4 As Label
     Friend WithEvents DslCheck1 As Microsoft.Dynamics.SL.Controls.DSLCheck
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DslMaskedText1 As Microsoft.Dynamics.SL.Controls.DSLMaskedText
 #End Region
 End Class
