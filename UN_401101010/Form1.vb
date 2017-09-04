@@ -87,20 +87,22 @@ Friend Class Form1
         Dim Agrupar As Integer
         Dim shipperid As String
 
-        LoteAgrupador = ""
-
-        Query = "select S4FUTURE11 from soshipheader group by s4future11"
-        Call sql(c1, Query)
-        serr1 = SFetch1(c1, LoteAgrupador)
-
-        If LoteAgrupador = "" Then
-            LoteAgrupador = "000001"
-        Else
-            LoteAgrupador = LoteAgrupador + 1
-        End If
-
-        'MessBox(LoteAgrupador, MB_ICONEXCLAMATION, "Error cliente inexistente")
         If Level = LEVEL1 Then
+            LoteAgrupador = ""
+
+            Query = "select TOP 1 S4FUTURE11 from soshipheader group by s4future11 order by S4Future11 DESC"
+            Call sql(c1, Query)
+            serr1 = SFetch1(c1, LoteAgrupador)
+
+            If LoteAgrupador = "" Then
+                LoteAgrupador = "000001"
+            Else
+                LoteAgrupador = LoteAgrupador + 1
+                LoteAgrupador = LoteAgrupador.PadLeft(6, "0")
+            End If
+
+            'MessBox(LoteAgrupador, MB_ICONEXCLAMATION, "Error cliente inexistente")
+
 
             Call Status(StartProcess, False, "", 0)
             RecFound = MFirst(Spread1, MemMaintFlg)
@@ -110,7 +112,7 @@ Friend Class Form1
                 If Agrupar = 0 Then
                     LoteAgrupador = ""
                 End If
-                Query = "xspActualiza_Embar_Agrupados" + SParm(shipperid) + SParm(Agrupar) + SParm(LoteAgrupador)
+                Query = "xsp_xActualiza_Embar_Agrupados" + SParm(shipperid) + SParm(Agrupar) + SParm(LoteAgrupador)
                 'Call MessBox(sSql, MB_OK, "Store Procedure")
                 Call sql(c1, Query)
                 RecFound = MNext(Spread1, MemMaintFlg)
@@ -119,10 +121,12 @@ Friend Class Form1
             Call Status(EndProcess, False, "", 0)
             'Redisplay the grid with the modified contents of the memory array.
             RecFound = MFirst(Spread1, MemMaintFlg)
-            Spread1 = DetailSetup(CSR_xSOShipHeader, DslGrid1, bxSOShipHeader.AddressOf("ShipperID"), bxSOShipHeader, PNULL, PNULL, PNULL)
+            'serr = SqlFetch1(CSR_xSOShipHeader, "xShoshipheader_All" + SParm(RTrim(bCustomer.CustId)), nxSOShipHeader)
+            'bxSOShipHeader = nxSOShipHeader
+            'Spread1 = DetailSetup(CSR_xSOShipHeader, DslGrid1, bxSOShipHeader.AddressOf("ShipperID"), bxSOShipHeader, PNULL, PNULL, PNULL)
             Call MDisplay(Spread1)
         End If
-
+        RetVal = NoAction
 
     End Sub
 End Class
