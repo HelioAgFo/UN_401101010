@@ -50,10 +50,10 @@
         Me.cCustidd = New Microsoft.Dynamics.SL.Controls.DSLMaskedText()
         Me.DslGrid1 = New Microsoft.Dynamics.SL.Controls.DSLGrid()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DslMaskedText1 = New Microsoft.Dynamics.SL.Controls.DSLMaskedText()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.DslCheck1 = New Microsoft.Dynamics.SL.Controls.DSLCheck()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DslMaskedText1 = New Microsoft.Dynamics.SL.Controls.DSLMaskedText()
         CType(Me.Update1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DslGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,10 +182,31 @@
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 123)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(566, 350)
+        Me.GroupBox2.Size = New System.Drawing.Size(493, 308)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle"
+        '
+        'DslMaskedText1
+        '
+        Me.DslMaskedText1.FieldName = """bxSoshipheader.s4future11""; 0; 0; 15"
+        Me.DslMaskedText1.Heading = "Lote Agru"
+        Me.DslMaskedText1.Level = "1"
+        Me.DslMaskedText1.Location = New System.Drawing.Point(130, 120)
+        Me.DslMaskedText1.Mask = "UUUUUUUUUU"
+        Me.DslMaskedText1.Name = "DslMaskedText1"
+        Me.DslMaskedText1.Size = New System.Drawing.Size(120, 22)
+        Me.DslMaskedText1.TabIndex = 5
+        Me.DslMaskedText1.TextLength = 10
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 123)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 17)
+        Me.Label6.TabIndex = 4
+        Me.Label6.Text = "Lote Agru:"
         '
         'DslCheck1
         '
@@ -208,33 +229,12 @@
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Agrupar:"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 123)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 17)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "Lote Agru:"
-        '
-        'DslMaskedText1
-        '
-        Me.DslMaskedText1.FieldName = """bxSoshipheader.s4future11""; 0; 0; 15"
-        Me.DslMaskedText1.Heading = "Lote Agru"
-        Me.DslMaskedText1.Level = "1"
-        Me.DslMaskedText1.Location = New System.Drawing.Point(130, 120)
-        Me.DslMaskedText1.Mask = "UUUUUUUUUU"
-        Me.DslMaskedText1.Name = "DslMaskedText1"
-        Me.DslMaskedText1.Size = New System.Drawing.Size(120, 22)
-        Me.DslMaskedText1.TabIndex = 5
-        Me.DslMaskedText1.TextLength = 10
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(590, 485)
+        Me.ClientSize = New System.Drawing.Size(590, 443)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Update1)

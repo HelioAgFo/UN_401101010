@@ -7,3 +7,7 @@ c:\users\heaf\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\ob
 c:\users\heaf\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\obj\Debug\UN_401101010.exe
 c:\users\heaf\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\obj\Debug\UN_401101010.pdb
 c:\users\heaf\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\bin\UN_401101010.exe.config
+C:\Users\HEAF\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\bin\UN_401101010.exe.manifest
+C:\Users\HEAF\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\bin\UN_401101010.application
+C:\Users\HEAF\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\obj\Debug\UN_401101010.exe.manifest
+C:\Users\HEAF\documents\visual studio 2015\Projects\UN_401101010\UN_401101010\obj\Debug\UN_401101010.application
